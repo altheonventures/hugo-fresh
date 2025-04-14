@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+{{- $fontName     := .Site.Params.font.name | default "Open Sans" }}
 <html lang="{{ .Site.LanguageCode }}">
   <head>
     {{ partial "meta.html" . }}
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
     {{ partial "css.html" . }}
   </head>
-  <body>
+  <body style="font-family:{{ $fontName }};">
     {{ if ne .Site.Params.preloader false }}
     <!-- Preloader -->
     <div id="preloader">
